@@ -1,0 +1,1047 @@
+din macro cg,dg
+local L1,L2,L3,L4,L5,L6,L7,L8,L9,L10,L11,L12,L13,L14,L15,L16,L17,L18,L19,L20,L21,L22,L23,L24,L25,L26,L27,L28,L29,L30
+
+mov cx,cg
+mov dx,dg
+L1: 
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+40
+je L2
+jmp L1
+L2: 
+mov cx,cg
+inc dx
+cmp dx,dg+10 ;DG+10
+je L3
+jmp L1
+L3: 
+mov cx,cg
+L4: 
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+5
+je L5
+jmp L4
+L5:
+add cx,10
+L6: 
+WrPixel cx,dx,0eh
+cmp cx,cg+39
+je L7
+inc cx
+jmp L6
+
+L7: 
+mov cx,cg
+inc dx
+cmp dx,dg+20 ;DG+10
+je L8
+jmp L4
+L8:
+mov cx,cg
+L9:
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+40
+je L10
+jmp L9
+L10: 
+mov cx,cg
+inc dx
+cmp dx,dg+40 ;+40
+je L11
+jmp L9
+L11:
+mov cx,cg
+sub cx,20
+L12:
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+20
+je L13
+jmp L12
+L13: 
+mov cx,cg
+sub cx,20
+inc dx
+cmp dx,dg+50 ;DG+40
+je L14
+jmp L12
+L14:
+mov cx,cg
+sub cx,20
+L15:
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+30
+je L16
+jmp L15
+L16: 
+mov cx,cg
+sub cx,20
+inc dx
+cmp dx,dg+55 ;DG+10
+je L17
+jmp L15
+L17: 
+mov cx,cg
+sub cx,40
+L18:
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+20
+je L19
+jmp L18
+L19: 
+mov cx,cg
+sub cx,40
+inc dx
+cmp dx,dg+60 ;DG+10
+je L20
+jmp L18
+L20:
+mov cx,cg
+sub cx,20
+L21:
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+20
+je L22
+jmp L21
+L22: 
+mov cx,cg
+sub cx,20
+inc dx
+cmp dx,dg+70 ;DG+40
+je L23
+jmp L21
+L23:
+mov cx,cg
+sub cx,10
+L24: 
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg-5
+je L25
+jmp L24
+L25:
+add cx,10
+L26: 
+WrPixel cx,dx,0eh
+cmp cx,cg+10
+je L27
+inc cx
+jmp L26
+
+L27: 
+mov cx,cg
+sub cx,10
+inc dx
+cmp dx,dg+85 ;DG+10
+je L28
+jmp L24
+L28:
+
+mov cx,cg
+mov dx,dg
+add cx,40
+L29:
+WrPixel cx,dx,0eh
+inc dx
+cmp dx,dg+90
+je L30
+jmp L29
+L30:
+sub dx,5
+
+endm
+
+din1 macro cg,dg
+local L201,L202,L203
+
+din cg,dg
+mov cx,cg
+sub cx,10
+L201: 
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg
+je L202
+jmp L201
+L202: 
+mov cx,cg
+sub cx,10
+inc dx
+cmp dx,dg+90 ;DG+10
+je L203
+jmp L201
+L203: 
+endm
+
+din2 macro cg,dg
+local L221,L222,L223
+
+din cg,dg
+mov cx,cg
+add cx,5
+L221: 
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+20
+je L222
+jmp L221
+L222: 
+mov cx,cg
+add cx,5
+inc dx
+cmp dx,dg+90 ;DG+10
+je L223
+jmp L221
+L223: 
+endm
+
+tr macro cg,dg
+local L101,L102,L103,L104,L105,L106,L107,L108,L109,L110,L111,L112
+
+mov cx,cg
+mov dx,dg
+L101: 
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+10
+je L102
+jmp L101
+L102: 
+mov cx,cg
+inc dx
+cmp dx,dg+10 ;DG+10
+je L103
+jmp L101
+L103: 
+mov cx,cg
+sub cx,10
+L104: 
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+20
+je L105
+jmp L104
+L105: 
+mov cx,cg
+sub cx,10
+inc dx
+cmp dx,dg+20 ;DG+10
+je L106
+jmp L104
+L106:
+mov cx,cg
+sub cx,20
+L107: 
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+30
+je L108
+jmp L107
+L108: 
+mov cx,cg
+sub cx,20
+inc dx
+cmp dx,dg+30 ;DG+10
+je L109
+jmp L107
+L109:
+mov cx,cg
+L110: 
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+10
+je L111
+jmp L110
+L111: 
+mov cx,cg
+inc dx
+cmp dx,dg+50 ;DG+10
+je L112
+jmp L110
+L112:
+
+endm
+
+blacktr macro cg,dg
+local L113,L114,L115,L116,L117,L118,L119,L120,L121,L122,L123,L124
+
+mov cx,cg
+mov dx,dg
+L113: 
+WrPixel cx,dx,00h
+inc cx
+cmp cx,cg+10
+je L114
+jmp L113
+L114: 
+mov cx,cg
+inc dx
+cmp dx,dg+10 ;DG+10
+je L115
+jmp L113
+L115: 
+mov cx,cg
+sub cx,10
+L116: 
+WrPixel cx,dx,00h
+inc cx
+cmp cx,cg+20
+je L117
+jmp L116
+L117: 
+mov cx,cg
+sub cx,10
+inc dx
+cmp dx,dg+20 ;DG+10
+je L118
+jmp L116
+L118:
+mov cx,cg
+sub cx,20
+L119: 
+WrPixel cx,dx,00h
+inc cx
+cmp cx,cg+30
+je L120
+jmp L119
+L120: 
+mov cx,cg
+sub cx,20
+inc dx
+cmp dx,dg+30 ;DG+10
+je L121
+jmp L119
+L121:
+mov cx,cg
+L122: 
+WrPixel cx,dx,00h
+inc cx
+cmp cx,cg+10
+je L123
+jmp L122
+L123: 
+mov cx,cg
+inc dx
+cmp dx,dg+50 ;DG+10
+je L124
+jmp L122
+L124:
+
+endm
+
+clo macro cg,dg
+local L151,L152,L153,L154,L155,L156,L157,L158,L159,L191,L192
+
+mov cx,cg
+mov dx,dg
+L151: 
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+40
+je L152
+jmp L151
+L152: 
+mov cx,cg
+inc dx
+cmp dx,dg+10 ;DG+10
+je L153
+jmp L151
+L153:
+mov cx,cg
+sub cx,10
+L154: 
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+50
+je L155
+jmp L154
+L155: 
+mov cx,cg
+sub cx,10
+inc dx
+cmp dx,dg+40 ;DG+10
+je L156
+jmp L154
+L156:
+mov cx,cg
+L157: 
+WrPixel cx,dx,0eh
+inc cx
+cmp cx,cg+40
+je L158
+jmp L157
+L158: 
+mov cx,cg
+inc dx
+cmp dx,dg+50 ;DG+10
+je L159
+jmp L157
+L159:
+
+mov cx,0
+mov dx,390
+L191: 
+WrPixel cx,dx,0eh
+inc cx
+cmp  cx,640
+je L192
+jmp L191
+L192: 
+
+endm
+
+clo1 macro 
+
+clo 100,100
+clo 200,50
+clo 300,100
+clo 400,50
+clo 500,100
+
+endm
+
+black macro
+local L44,L45,L46
+
+mov cx,60
+mov dx,170
+L44: 
+WrPixel cx,dx,00h
+inc cx
+cmp cx,141
+je L45
+jmp L44
+L45: 
+mov cx,60
+inc dx
+cmp dx,390
+je L46
+jmp L44 
+L46:
+ 
+endm
+
+
+damn macro cg,dg
+
+din1 100,300
+tr cg,dg
+call delay
+black
+
+din2 100,300
+call delay
+black 
+blacktr cg,dg
+
+endm
+
+
+include macro.h
+
+.model small
+
+.stack
+
+.data
+
+string db 010,013,010,013,010,013,010,013,010,013,010,013,010,013,010,013,010,013,010,013,010,013,010,013,'              you lose  you lose  you lose  you lose  you lose',010,013,'              you lose  you lose  you lose  you lose  you lose',010,013,'              you lose  you lose  you lose  you lose  you lose',010,013,'              you lose  you lose  you lose  you lose  you lose',010,013,'              you lose  you lose  you lose  you lose  you lose$'
+cg db 00h
+dg db 00h
+bb db 00h
+egg db 00h
+fgg db 00h
+
+.code
+
+kb proc
+push ax
+mov ah,11h ;�ˬd��L�w�İ�
+int 16h
+
+jz quit
+mov ah,010h 
+int 16h
+
+;�Y�S������b����zf=0 or zf=1?�Ӱ��ƻ�?
+;�Y������b�������p��M��buffer
+
+cmp al,1bh ;ESC��O�_�Q���U?
+je quit1
+
+cmp al,0e0h
+je L5
+;mov dl,al
+;mov ah,02h
+;int 21h
+jmp quit
+;�O�_�O������?�Y�O�Ӱ��ƻ�?
+
+;���OESC�Ω�����A��ܫ��U������(mov
+;ah,02h int 21h)
+
+;�P�_�O���ө�����A�ÿ�X�������N���r��
+L5: cmp ah,048h
+je L6
+cmp ah,050h
+je L7
+jmp quit
+
+L6: 
+
+inc egg
+jmp quit
+
+L7: 
+
+inc fgg
+jmp quit
+
+quit1:
+
+mov ah,4ch
+int 21h
+
+quit:
+pop ax
+ret
+
+kb endp
+
+delay proc
+mov cx,0000h
+L301: 
+mov bp,0400h
+L302:
+dec bp
+cmp bp,0
+jnz L302
+loop L301
+ret
+delay endp
+
+main proc
+mov ax,@data
+mov ds,ax
+mov cx,500
+
+SetMode 12h
+SetColor 00h
+
+clo1
+
+L555:
+clear
+PrintStrr bb
+add bb,1
+damn 600,340
+call kb
+cmp egg,1
+je L500
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+cmp fgg,1
+jne L501
+black
+clo 90,340
+tr 560,340
+call delay
+call delay
+call delay
+call delay
+blacktr 560,340
+mov fgg,0
+jmp L501
+L500:
+din 100,255
+tr 560,340
+call delay
+black
+blacktr 560,340
+din 100,210
+tr 520,340
+call delay
+black
+blacktr 520,340
+din 100,255
+tr 480,340
+call delay
+black
+blacktr 480,340
+mov egg,0
+Jmp L507   ;440
+
+L501:
+clear
+PrintStrr bb
+add bb,1
+damn 560,340
+call kb
+cmp egg,1
+je L502
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+cmp fgg,1
+jne L503
+black
+clo 90,340
+tr 520,340
+call delay
+call delay
+call delay
+call delay
+blacktr 520,340
+mov fgg,0
+jmp L503
+L502:
+din 100,255
+tr 520,340
+call delay
+black
+blacktr 520,340
+din 100,210
+tr 480,340
+call delay
+black
+blacktr 480,340
+din 100,255
+tr 440,340
+call delay
+black
+blacktr 440,340
+mov egg,0
+Jmp L509   ;400
+
+L503:
+clear
+PrintStrr bb
+add bb,1
+damn 520,340
+call kb
+cmp egg,1
+je L504
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+cmp fgg,1
+jne L505
+black
+clo 90,340
+tr 480,340
+call delay
+call delay
+call delay
+call delay
+blacktr 480,340
+mov fgg,0
+jmp L505
+L504:
+din 100,255
+tr 480,340
+call delay
+black
+blacktr 480,340
+din 100,210
+tr 440,340
+call delay
+black
+blacktr 440,340
+din 100,255
+tr 400,340
+call delay
+black
+blacktr 400,340
+mov egg,0
+Jmp L511   ;360
+
+L505:
+clear
+PrintStrr bb
+add bb,1
+damn 480,340
+call kb
+cmp egg,1
+je L506
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+cmp fgg,1
+jne L507
+black
+clo 90,340
+tr 440,340
+call delay
+call delay
+call delay
+call delay
+blacktr 440,340
+mov fgg,0
+jmp L507
+L506:
+din 100,255
+tr 440,340
+call delay
+black
+blacktr 440,340
+din 100,210
+tr 400,340
+call delay
+black
+blacktr 400,340
+din 100,255
+tr 360,340
+call delay
+black
+blacktr 360,340
+mov egg,0
+Jmp L513   ;320
+
+L507:
+clear
+PrintStrr bb
+add bb,1
+damn 440,340
+call kb
+cmp egg,1
+je L508
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+cmp fgg,1
+jne L509
+black
+clo 90,340
+tr 400,340
+call delay
+call delay
+call delay
+call delay
+blacktr 400,340
+mov fgg,0
+jmp L509
+L508:
+din 100,255
+tr 400,340
+call delay
+black
+blacktr 400,340
+din 100,210
+tr 360,340
+call delay
+black
+blacktr 360,340
+din 100,255
+tr 320,340
+call delay
+black
+blacktr 320,340
+mov egg,0
+Jmp L515   ;280
+
+L509:
+clear
+PrintStrr bb
+add bb,1
+damn 400,340
+call kb
+cmp egg,1
+je L510
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+cmp fgg,1
+jne L511
+black
+clo 90,340
+tr 360,340
+call delay
+call delay
+call delay
+call delay
+blacktr 360,340
+mov fgg,0
+jmp L511
+L510:
+din 100,255
+tr 360,340
+call delay
+black
+blacktr 360,340
+din 100,210
+tr 320,340
+call delay
+black
+blacktr 320,340
+din 100,255
+tr 280,340
+call delay
+black
+blacktr 280,340
+mov egg,0
+Jmp L517   ;280
+
+L511:
+clear
+PrintStrr bb
+add bb,1
+damn 360,340
+call kb
+cmp egg,1
+je L512
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+cmp fgg,1
+jne L513
+black
+clo 90,340
+tr 320,340
+call delay
+call delay
+call delay
+call delay
+blacktr 320,340
+mov fgg,0
+jmp L513
+L512:
+din 100,255
+tr 320,340
+call delay
+black
+blacktr 320,340
+din 100,210
+tr 280,340
+call delay
+black
+blacktr 280,340
+din 100,255
+tr 240,340
+call delay
+black
+blacktr 240,340
+mov egg,0
+Jmp L519   ;280
+
+L513:
+clear
+PrintStrr bb
+add bb,1
+damn 320,340
+call kb
+cmp egg,1
+je L514
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+cmp fgg,1
+jne L515
+black
+clo 90,340
+tr 280,340
+call delay
+call delay
+call delay
+call delay
+blacktr 280,340
+mov fgg,0
+jmp L515
+L514:
+din 100,255
+tr 280,340
+call delay
+black
+blacktr 280,340
+din 100,210
+tr 240,340
+call delay
+black
+blacktr 240,340
+din 100,255
+tr 200,340
+call delay
+black
+blacktr 200,340
+mov egg,0
+Jmp L530   ;160
+
+L515:
+clear
+PrintStrr bb
+add bb,1
+damn 280,340
+call kb
+cmp egg,1
+je L516
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+cmp fgg,1
+jne L517
+black
+clo 90,340
+tr 240,340
+call delay
+call delay
+call delay
+call delay
+blacktr 240,340
+mov fgg,0
+jmp L517
+L516:
+din 100,255
+tr 240,340
+call delay
+black
+blacktr 240,340
+din 100,210
+tr 200,340
+call delay
+black
+blacktr 200,340
+din 100,255
+tr 160,340
+call delay
+black
+blacktr 160,340
+mov egg,0
+Jmp L530   ;120
+
+L517:
+clear
+PrintStrr bb
+add bb,1
+damn 240,340
+call kb
+cmp egg,1
+je L518
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+cmp fgg,1
+jne L519
+black
+clo 90,340
+tr 200,340
+call delay
+call delay
+call delay
+call delay
+blacktr 200,340
+mov fgg,0
+jmp L519
+L518:
+din 100,255
+tr 200,340
+call delay
+black
+blacktr 200,340
+din 100,210
+tr 160,340
+call delay
+black
+blacktr 160,340
+din 100,255
+tr 120,340
+call delay
+black
+blacktr 120,340
+mov egg,0
+Jmp L530   ;120
+
+L519:
+clear
+PrintStrr bb
+add bb,1
+damn 200,340
+call kb
+cmp egg,1
+je L520
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+cmp fgg,1
+jne L521
+black
+clo 90,340
+tr 160,340
+call delay
+call delay
+call delay
+call delay
+blacktr 160,340
+mov fgg,0
+jmp L521
+L520:
+din 100,255
+tr 160,340
+call delay
+black
+blacktr 160,340
+din 100,210
+tr 120,340
+call delay
+black
+blacktr 120,340
+din 100,255
+tr 80,340
+call delay
+black
+blacktr 80,340
+mov egg,0
+Jmp L530   ;80
+
+L521:
+clear
+PrintStrr bb
+add bb,1
+damn 160,340
+call kb
+cmp egg,1
+je L522
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+cmp fgg,1
+jne L530
+black
+clo 90,340
+tr 120,340
+call delay
+call delay
+call delay
+call delay
+blacktr 120,340
+mov fgg,0
+jmp L530
+L522:
+din 100,255
+tr 120,340
+call delay
+black
+blacktr 120,340
+din 100,210
+tr 80,340
+call delay
+black
+blacktr 80,340
+din 100,255
+tr 40,340
+call delay
+black
+blacktr 40,340
+mov egg,0
+Jmp L529   ;80
+
+L523:
+;damn 120,340
+;L524:
+L525:
+;damn 80,340
+;L526:
+L527:
+;damn 40,340
+;L528:
+L529:
+
+jmp L555
+
+L530:
+over:
+
+SetMode 12h
+SetColor 00h
+clear
+PrintStrr bb
+PrintStr string
+
+GetChar 
+SetMode 03h 
+mov ax,4c00h
+int 21h
+
+main endp
+end main
